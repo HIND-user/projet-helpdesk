@@ -5,31 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>help-desk</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header> <img src="assets/logo help desk.png"> <span>Atlas Solutions / Support</span></header>
+    <!--HEADER-->
+    <header class="header"> <img src="assets/logo help desk.png" width="200"> <span>Atlas Solutions / Support</span>
+    </header>
     <main>
-        <section sect>
+        <section class="section1">
             <h1>Gestion des demandes</h1>
             <p>Centralisez les incidents et simplifiez le suivi de votre équipe.</p>
-            <div>
+            <div class="ajoute">
+
                 <h3>Créer une demande</h3>
-                <pre>Décrivez votre problème informatique en quelques étapes.</pre>
-                <label>Titre du problème *</label>
-                <input type="text" value="Connexion Wi-Fi instable">
-                <label>Priorité *</label>
-                <input type="text" value="Réseau                 ⌄">
-                <label>Description *</label>
-                <input type="text" value="Haute                   ⌄">
-                <label>Titre du problème *</label>
-                <input type="text" value="Décrivez le problème informatique rencontré...">
-                <button>＋ Ajouter la demande</button>
+                <p>Décrivez votre problème informatique en quelques étapes.</p>
+
+                <!--formulaire demander-->
+                <form class="formulaire">
+                    <div class="problem">
+                        <label for="titre">Titre du problème *</label>
+                        <input type="text" id="titre"
+                         placeholder=" Connexion Wi-Fi instable" required>
+                    </div>
+                    <div class="problem">
+                        <label for="categorie">Catégorie *</label>
+                        <select id="categorie" required>
+                            <option value="">choisir une Catégorie</option>
+                            <option value="Matériel">Matériel</option>
+                            <option value="Logiciel">Logiciel</option>
+                            <option value="Réseau">Réseau</option>
+                        </select>
+                    </div>
+                    <div class="problem">
+                        <label for="priorite">Priorité *</label>
+                        <select id="priorite" required>
+                            <option value="">Choisir une priorité</option>
+                            <option value="Basse">Basse</option>
+                            <option value="Normale">Normale</option>
+                            <option value="Haute">Haute</option>
+                        </select>
+                    </div>
+                    <div class="problem-description">
+                        <label for="description">Description *</label>
+                        <textarea id="description"
+                         placeholder="Décrivez le problème informatique rencontré..."
+                          required></textarea>
+                    </div>
+                    <div class="btn">
+                    <button type="submit">＋ Ajouter la demande</button>
+                    </div>
+            </form>
             </div>
+        </section>
+
+        <section class="section2">
             <h2>Liste des demandes</h2>
             <p>3 demandes</p><label><input type="checkbox" value="▦  Cartes">▦ Cartes</label>
             <label><input type="checkbox" value="☷  Tableau">☷ Tableau</label>
-            <div class="ticket-card" data-id="1">
+
+            <div class="ticket-card1" data-id="1">
                 <p>⌁</p><span>HD-001</span>
                 <h5>Connexion Wi-Fi instable</h5>
                 <pre>Le réseau se déconnecte régulièrement.</pre>
@@ -39,20 +74,20 @@
                 <p>✎ Modifier</p>
                 <p>♜ Supprimer</p>
             </div>
-            <div>
-                <p>⌁</p><span>HD-002</span>
-                <h5>Connexion Wi-Fi instable</h5>
-                <pre>Le réseau se déconnecte régulièrement.</pre>
+            <div class="ticket-card2" data-id="2">
+                <p>▣</p><span>HD-002</span>
+                <h5>Installation d’un logiciel</h5>
+                <pre>Installer un logiciel sur le poste.</pre>
                 <p>Logiciel</p>
                 <p>Normale</p>
                 <div>________________________________</div>
                 <p>✎ Modifier</p>
                 <p>♜ Supprimer</p>
             </div>
-            <div>
-                <p>⌁</p><span>HD-003</span>
-                <h5>Connexion Wi-Fi instable</h5>
-                <pre>Le réseau se déconnecte régulièrement.</pre>
+            <div class="ticket-card3" data-id="3">
+                <p>⌨</p><span>HD-003</span>
+                <h5>Clavier défectueux</h5>
+                <pre>Certaines touches ne fonctionnent plus.</pre>
                 <p>Matériel</p>
                 <p>Basse</p>
                 <div>________________________________</div>
@@ -61,14 +96,6 @@
             </div>
 
         </section>
-
-
-
-
-
-
-
-
 
 
 
@@ -108,7 +135,7 @@
 
 
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>
