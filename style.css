@@ -1,48 +1,94 @@
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+* {
+    box-sizing: border-box;
 }
-.header span{
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header span {
     color: #8A95A4;
-    padding-right:150px;
+    padding-right: 150px;
 }
-.section1{
-    background-color:#F7F8FA;
+
+.section1 {
+    background-color: #F7F8FA;
     margin-bottom: 0;
     padding-bottom: 0;
-     
+
 }
-.section1 h1{
+
+.section1 h1 {
     color: #202A38;
     padding-left: 40px;
     padding-top: 40px;
 
 }
-.section1 p{
-     color:#8A95A4;
-    padding-left:40px;
+
+.section1 p {
+    color: #8A95A4;
+    padding-left: 40px;
 }
-.ajoute{
+
+.ajoute {
     background-color: #FFFFFF;
-    margin:50px;
-    height: auto;
-    width: 1550px;
-    border-radius:25px;
-    padding: 100px;
+    margin: 30px aouto;
+
+    width: calc(100% - 60px);
+    border-radius: 25px;
+    padding: 30px;
     padding-top: 10px;
     margin-bottom: 0;
-    
+
 }
-.ajoute h3{
+
+.ajoute h3 {
     font-size: 30px;
 }
-.formulaire{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:50px;
+
+.formulaire {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
     margin-bottom: 0;
 }
+
+@media (max-width: 900px) {
+    .formulaire {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .ajoute {
+        width: calc(100% - 30px);
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .formulaire {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .problem-description {
+        grid-column: 1;
+    }
+
+    .section1 h1,
+    .section1 p {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .ajoute h3 {
+        font-size: 24px;
+    }
+}
+
 .problem {
     display: flex;
     flex-direction: column;
@@ -50,6 +96,7 @@
     gap: 10px;
     min-width: 0;
 }
+
 .problem input,
 .problem select {
     width: 100%;
@@ -58,6 +105,7 @@
     border: 1px solid #D9DEE5;
     border-radius: 15px;
 }
+
 .problem-description textarea {
     width: 100%;
     min-height: 100px;
@@ -67,32 +115,224 @@
     resize: vertical;
     font-family: Arial, sans-serif;
 }
-.btn{
+
+.btn {
     grid-column: 1 / -1;
     display: flex;
     justify-content: flex-end;
 }
-.btn button{
+
+.btn button {
     background-color: #252F3E;
     border-radius: 15px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     height: 60px;
-    width:150px;
+    width: 150px;
 }
 
-.problem-description{
-    grid-column:1/4 ;
+.problem-description {
+    grid-column: 1/-1;
     height: 100%;
 
 }
-.section2 ,
-.ticket-card1{
-    background-color:#F7F8FA;
-     margin-top: 0;
-    padding-top: 0;
-    display: grid;
-    grid-template-rows:(3,1fr);
+
+
+
+.section2 {
+    background-color: #F7F8FA;
+    padding-top: 50px;
 }
+
 .section2 h2 {
     margin-top: 0;
+    font-size: 30px;
+}
+
+.liste {
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liste p {
+    color: #8A95A4;
+}
+
+
+
+.choix {
+    display: flex;
+    gap: 10px;
+}
+
+.choix button {
+    padding: 10px 15px;
+    border: 1px solid #D9DEE5;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.cartes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+.ticket-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    min-width: 0;
+}
+
+.ticket-card h5 {
+    font-size: 22px;
+    margin: 20px 0 10px;
+    overflow-wrap: anywhere;
+}
+
+.ticket-card pre {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #8D99A8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.ticket-id {
+    color: #8A95A4;
+    font-size: 14px;
+}
+
+.ticket-infos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.categorie-card,
+.priorite-card {
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+
+.categorie-card {
+    background-color: #F0F3F7;
+    color: #64748B;
+}
+
+
+.priorite-card {
+    background-color: #F0F3F7;
+}
+
+.priorite-haute {
+    background-color: #FFF0E8;
+    color: #BA6444;
+}
+
+.priorite-normale {
+    background-color: #FFF5DF;
+    color: #A67A2B;
+}
+
+.priorite-basse {
+    background-color: #E8F6EE;
+    color: #388867;
+}
+
+
+.ticket-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.Modifier,
+.Supprimer {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.Modifier {
+    color: #587397;
+}
+
+.Supprimer {
+    color: #CC626A;
+}
+
+
+@media (max-width: 900px) {
+
+    .cartes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .liste {
+        padding: 0 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .cartes {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .liste {
+        padding: 0 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .section2 {
+        padding-top: 30px;
+    }
+
+    .section2 h2 {
+        font-size: 24px;
+    }
+
+    .ticket-card {
+        padding: 20px;
+    }
+
+    .ticket-actions {
+        flex-wrap: wrap;
+    }
+
+    .ticket-actions button {
+        flex: 1;
+    }
 }

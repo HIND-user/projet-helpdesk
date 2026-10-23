@@ -22,120 +22,77 @@
                 <p>Décrivez votre problème informatique en quelques étapes.</p>
 
                 <!--formulaire demander-->
-                <form class="formulaire">
+
+                <form class="formulaire" id="formulaire-demande">
+
                     <div class="problem">
                         <label for="titre">Titre du problème *</label>
-                        <input type="text" id="titre"
-                         placeholder=" Connexion Wi-Fi instable" required>
+                        <input type="text" id="titre" placeholder="Connexion Wi-Fi instable" required>
                     </div>
+
                     <div class="problem">
                         <label for="categorie">Catégorie *</label>
+
                         <select id="categorie" required>
-                            <option value="">choisir une Catégorie</option>
+                            <option value="">Choisir une categorie</option>
                             <option value="Matériel">Matériel</option>
                             <option value="Logiciel">Logiciel</option>
                             <option value="Réseau">Réseau</option>
                         </select>
                     </div>
+
                     <div class="problem">
                         <label for="priorite">Priorité *</label>
+
                         <select id="priorite" required>
-                            <option value="">Choisir une priorité</option>
+                            <option value="">Choisir une priorite</option>
                             <option value="Basse">Basse</option>
                             <option value="Normale">Normale</option>
                             <option value="Haute">Haute</option>
                         </select>
                     </div>
+
                     <div class="problem-description">
                         <label for="description">Description *</label>
-                        <textarea id="description"
-                         placeholder="Décrivez le problème informatique rencontré..."
-                          required></textarea>
+
+                        <textarea id="description" placeholder="Décrivez le problème informatique..."
+                            required></textarea>
                     </div>
+
                     <div class="btn">
-                    <button type="submit">＋ Ajouter la demande</button>
+                        <button type="submit" id="btn">
+                            ＋ Ajouter la demande
+                        </button>
                     </div>
-            </form>
+
+                </form>
+
             </div>
         </section>
-
         <section class="section2">
-            <h2>Liste des demandes</h2>
-            <p>3 demandes</p><label><input type="checkbox" value="▦  Cartes">▦ Cartes</label>
-            <label><input type="checkbox" value="☷  Tableau">☷ Tableau</label>
 
-            <div class="ticket-card1" data-id="1">
-                <p>⌁</p><span>HD-001</span>
-                <h5>Connexion Wi-Fi instable</h5>
-                <pre>Le réseau se déconnecte régulièrement.</pre>
-                <p>Réseau</p>
-                <p>Haute</p>
-                <div>________________________________</div>
-                <p>✎ Modifier</p>
-                <p>♜ Supprimer</p>
+            <div class="liste">
+
+                <div>
+                    <h2>Liste des demandes</h2>
+                    <p id="compteur">3 demandes</p>
+                </div>
+
+                <div class="choix">
+                    <button type="button">▦ Cartes</button>
+                    <button type="button">☷ Tableau</button>
+                </div>
+
             </div>
-            <div class="ticket-card2" data-id="2">
-                <p>▣</p><span>HD-002</span>
-                <h5>Installation d’un logiciel</h5>
-                <pre>Installer un logiciel sur le poste.</pre>
-                <p>Logiciel</p>
-                <p>Normale</p>
-                <div>________________________________</div>
-                <p>✎ Modifier</p>
-                <p>♜ Supprimer</p>
-            </div>
-            <div class="ticket-card3" data-id="3">
-                <p>⌨</p><span>HD-003</span>
-                <h5>Clavier défectueux</h5>
-                <pre>Certaines touches ne fonctionnent plus.</pre>
-                <p>Matériel</p>
-                <p>Basse</p>
-                <div>________________________________</div>
-                <p>✎ Modifier</p>
-                <p>♜ Supprimer</p>
-            </div>
+
+            <div class="cartes" id="cartes"></div>
 
         </section>
-
-
-
-
-
-
-
-
 
 
     </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
